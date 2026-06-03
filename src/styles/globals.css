@@ -1,0 +1,178 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0697A7;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+}
+
+/* Premium technology motion accents */
+.aurora-field {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(6, 151, 167, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(124, 58, 237, 0.22), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.12), transparent 32%);
+  filter: blur(8px);
+  animation: aurora-drift 14s ease-in-out infinite alternate;
+}
+
+.scanline-layer {
+  background: linear-gradient(to bottom, transparent 0%, rgba(6,151,167,0.08) 50%, transparent 100%);
+  height: 32%;
+  transform: translateY(-120%);
+  animation: scan-pass 7s linear infinite;
+}
+
+.cyber-grid {
+  animation: grid-drift 18s linear infinite;
+}
+
+.scroll-line {
+  animation: scroll-pulse 1.8s ease-in-out infinite;
+}
+
+.tech-pillar-card::before,
+.dashboard-hologram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-120%);
+  animation: hologram-shine 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.tech-pillar-card {
+  transition: border-color 300ms ease, box-shadow 300ms ease, background 300ms ease;
+}
+
+.tech-pillar-card:hover {
+  border-color: rgba(6,151,167,0.42);
+  box-shadow: 0 22px 80px rgba(6,151,167,0.12);
+}
+
+@keyframes aurora-drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
+}
+
+@keyframes scan-pass {
+  0% { transform: translateY(-130%); opacity: 0; }
+  12% { opacity: 1; }
+  55% { opacity: 0.75; }
+  100% { transform: translateY(340%); opacity: 0; }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(0.35); transform-origin: top; opacity: 0.45; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+}
+
+@keyframes hologram-shine {
+  0%, 45% { transform: translateX(-120%); opacity: 0; }
+  58% { opacity: 1; }
+  78%, 100% { transform: translateX(120%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-field,
+  .scanline-layer,
+  .cyber-grid,
+  .scroll-line,
+  .tech-pillar-card::before,
+  .dashboard-hologram::before {
+    animation: none !important;
+  }
+}
+
+/* Consistent premium clickable UI */
+.ui-action,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui-action {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.ui-action::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.22), transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 650ms ease;
+  z-index: -1;
+}
+
+.ui-action:hover::after {
+  transform: translateX(120%);
+}
+
+.ui-action:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(6,151,167,0.75);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+}
+
+/* Extra smoothness */
+::selection {
+  background: rgba(6, 151, 167, 0.35);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  .smooth-card,
+  .group,
+  button,
+  a {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
