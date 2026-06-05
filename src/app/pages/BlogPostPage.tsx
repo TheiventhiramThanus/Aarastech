@@ -8,10 +8,31 @@ import { AdBanner } from "../components/AdManager";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import { articleSchema as createArticleSchema, breadcrumbSchema, buildSchema, pageSchema } from "../lib/seo";
+import { blogPosts as fallbackBlogPosts } from "../data/blogPosts";
 
 interface BlogPost {
   id: string; title: string; slug: string; excerpt: string; contentText?: string; content?: any; author: string; authorRole?: string; date: string; category: string;
-  readTime: string; status: string; tag: string; color: string; image: string; featured?: boolean;
+  readTime: string; status?: string; tag: string; color: string; image: string; featured?: boolean;
+}
+
+const staticPublishedPosts: BlogPost[] = fallbackBlogPosts.map((post) => ({
+  ...post,
+  id: String(post.id),
+  status: "Published",
+}));
+
+function publishedPostsWithFallback(firebasePosts: BlogPost[]) {
+  const bySlug = new Map<string, BlogPost>();
+  staticPublishedPosts.forEach((post) => bySlug.set(post.slug, post));
+  firebasePosts
+    .filter((post) => !post.status || post.status === "Published")
+    .forEach((post) => bySlug.set(post.slug, post));
+
+  return Array.from(bySlug.values()).sort((a, b) => {
+    const aTime = Date.parse(a.date);
+    const bTime = Date.parse(b.date);
+    return (Number.isNaN(bTime) ? 0 : bTime) - (Number.isNaN(aTime) ? 0 : aTime);
+  });
 }
 
 export function BlogPostPage() {
@@ -26,11 +47,14 @@ export function BlogPostPage() {
         const q = query(collection(db, "blog_posts"), where("status", "==", "Published"));
         const snap = await getDocs(q);
         const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as BlogPost));
-        setAllPosts(data);
-        const currentPost = data.find(p => p.slug === slug);
+        const publishedPosts = publishedPostsWithFallback(data);
+        setAllPosts(publishedPosts);
+        const currentPost = publishedPosts.find(p => p.slug === slug);
         setPost(currentPost || null);
       } catch (e) {
         console.error("Error fetching post:", e);
+        setAllPosts(staticPublishedPosts);
+        setPost(staticPublishedPosts.find((p) => p.slug === slug) || null);
       } finally {
         setLoading(false);
       }

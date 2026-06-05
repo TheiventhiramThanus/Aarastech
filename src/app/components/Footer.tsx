@@ -1,13 +1,30 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 import { Linkedin, Instagram, Facebook, Mail } from "lucide-react";
 import logo from "../../imports/ChatGPT_Image_May_27__2026__10_20_02_PM.png";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { AdBanner } from "./AdManager";
 
 const links = {
-  Services: ["Web Development", "Mobile Apps", "AI Solutions", "UI/UX Design", "SEO & AEO", "SaaS Platforms"],
-  Company: ["About Us", "Blog", "Careers", "Contact"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Services: [
+    { label: "Web Development", href: "/services" },
+    { label: "Mobile Apps", href: "/services" },
+    { label: "AI Solutions", href: "/services" },
+    { label: "UI/UX Design", href: "/services" },
+    { label: "SEO & AEO", href: "/services" },
+    { label: "SaaS Platforms", href: "/services" },
+  ],
+  Company: [
+    { label: "About Us", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "Community", href: "/community" },
+    { label: "Contact", href: "/contact" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+  ],
 };
 
 const socials = [
@@ -73,13 +90,13 @@ export function Footer() {
               </h4>
               <ul className="space-y-1.5 sm:space-y-2.5">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                  <li key={item.href}>
+                    <Link
+                      to={item.href}
                       className="text-gray-500 hover:text-[#0697A7] text-xs sm:text-sm transition-colors duration-200"
                     >
-                      {item}
-                    </a>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

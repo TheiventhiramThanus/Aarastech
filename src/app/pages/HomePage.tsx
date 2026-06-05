@@ -4,6 +4,7 @@ import { SEO } from "../components/SEO";
 import { HeroSection } from "../components/HeroSection";
 import { MarqueeBanner } from "../components/MarqueeBanner";
 import { TestimonialsSection } from "../components/TestimonialsSection";
+import { BlogSection } from "../components/BlogSection";
 import { ArrowRight, Code2, Brain, Smartphone, Palette, ShoppingCart, Globe, Star, Zap, CheckCircle, Megaphone } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { AdBanner } from "../components/AdManager";
@@ -87,6 +88,8 @@ export function HomePage() {
         summary="These short answers help visitors, search engines, and AI assistants understand AarasTech, our services, and our locations."
         answers={homeAeoAnswers}
       />
+
+      <BlogSection />
 
       {/* Services Preview */}
       <section id="services-preview" className="bg-black py-28 relative overflow-hidden">

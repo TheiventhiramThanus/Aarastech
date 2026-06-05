@@ -34,6 +34,7 @@ export function SEO({ title, description, canonicalUrl, schema, ogImage, keyword
       <meta property="og:type" content={finalOgType} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:site_name" content="AarasTech" />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={finalOgImage} />
@@ -48,6 +49,7 @@ export function SEO({ title, description, canonicalUrl, schema, ogImage, keyword
       <meta property="twitter:image:alt" content="AarasTech digital technology company logo" />
       
       <link rel="canonical" href={currentUrl} />
+      <link rel="alternate" type="application/rss+xml" title="AarasTech Blog RSS" href={`${SITE_URL}/rss.xml`} />
 
       {schemaItems.map((schemaItem, index) => (
         <script key={index} type="application/ld+json">

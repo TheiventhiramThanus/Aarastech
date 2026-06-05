@@ -9,6 +9,9 @@ const BlogPage = lazy(() => import("./pages/BlogPage").then((module) => ({ defau
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage").then((module) => ({ default: module.BlogPostPage })));
 const ContactPage = lazy(() => import("./pages/ContactPage").then((module) => ({ default: module.ContactPage })));
 const CommunityPage = lazy(() => import("./pages/CommunityPage").then((module) => ({ default: module.CommunityPage })));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage").then((module) => ({ default: module.PrivacyPolicyPage })));
+const TermsConditionsPage = lazy(() => import("./pages/TermsConditionsPage").then((module) => ({ default: module.TermsConditionsPage })));
+const CookiePolicyPage = lazy(() => import("./pages/CookiePolicyPage").then((module) => ({ default: module.CookiePolicyPage })));
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +23,14 @@ export const router = createBrowserRouter([
       { path: "services", Component: ServicesPage },
       { path: "blog", Component: BlogPage },
       { path: "blog/:slug", Component: BlogPostPage },
+      { path: "resources", loader: () => redirect("/blog") },
+      { path: "resources/:slug", loader: ({ params }) => redirect(`/blog/${params.slug}`) },
       { path: "contact", Component: ContactPage },
       { path: "community", Component: CommunityPage },
+      { path: "privacy-policy", Component: PrivacyPolicyPage },
+      { path: "terms-and-conditions", Component: TermsConditionsPage },
+      { path: "terms", loader: () => redirect("/terms-and-conditions") },
+      { path: "cookie-policy", Component: CookiePolicyPage },
       { path: "login", Component: () => null },
       { path: "dashboard", Component: () => null },
       { path: "*", loader: () => redirect("/") },

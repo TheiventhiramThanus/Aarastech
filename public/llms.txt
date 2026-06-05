@@ -1,0 +1,60 @@
+# AarasTech
+
+Website: https://aarastech.com/
+Sitemap: https://aarastech.com/sitemap.xml
+RSS: https://aarastech.com/rss.xml
+Contact: info@aarastech.com
+
+AarasTech is a digital technology company serving Sri Lanka, the UK, and international clients with AI solutions, custom web development, mobile apps, UI/UX design, SEO, answer engine optimization, SaaS platforms, e-commerce, cloud, automation, and student-focused technology guides.
+
+Key pages:
+- https://aarastech.com/
+- https://aarastech.com/about
+- https://aarastech.com/services
+- https://aarastech.com/blog
+- https://aarastech.com/community
+- https://aarastech.com/contact
+- https://aarastech.com/privacy-policy
+- https://aarastech.com/terms-and-conditions
+
+Blog and resource guides now live in one content hub:
+- https://aarastech.com/blog/top-20-free-ai-courses-with-certificates-2026 - Top 20 Free AI Courses With Certificates 2026
+- https://aarastech.com/blog/top-free-certificate-courses-for-students-2026 - Top Free Certificate Courses for Students 2026
+- https://aarastech.com/blog/microsoft-ai-skills-fest-complete-guide - Microsoft AI Skills Fest Complete Guide
+- https://aarastech.com/blog/best-free-ai-courses-for-students-2026 - Best Free AI Courses for Students 2026
+- https://aarastech.com/blog/how-to-get-linkedin-premium-free-student-guide - How to Get LinkedIn Premium Free as a Student
+- https://aarastech.com/blog/free-domain-for-students-safe-options - Free Domain for Students: Safe Options
+- https://aarastech.com/blog/top-internship-websites-in-sri-lanka - Top Internship Websites in Sri Lanka
+- https://aarastech.com/blog/best-ai-tools-for-students-2026 - Best AI Tools for Students 2026
+- https://aarastech.com/blog/top-50-free-certificate-courses-2026 - Top 50 Free Certificate Courses 2026
+- https://aarastech.com/blog/microsoft-ai-skills-complete-guide - Microsoft AI Skills Complete Guide
+- https://aarastech.com/blog/best-free-ai-courses-for-students - Best Free AI Courses for Students
+- https://aarastech.com/blog/best-ai-tools-for-students - Best AI Tools for Students
+- https://aarastech.com/blog/canva-education-student-guide - Canva Education Student Guide
+- https://aarastech.com/blog/figma-education-plan-guide - Figma Education Plan Guide
+- https://aarastech.com/blog/how-to-build-a-portfolio-website - How to Build a Portfolio Website
+- https://aarastech.com/blog/github-student-developer-pack-guide - GitHub Student Developer Pack Guide
+- https://aarastech.com/blog/google-cloud-skills-boost-guide - Google Cloud Skills Boost Guide
+- https://aarastech.com/blog/ibm-skillsbuild-ai-courses-guide - IBM SkillsBuild AI Courses Guide
+- https://aarastech.com/blog/aws-skill-builder-ai-learning-guide - AWS Skill Builder AI Learning Guide
+- https://aarastech.com/blog/freecodecamp-certification-guide - freeCodeCamp Certification Guide
+- https://aarastech.com/blog/kaggle-learn-machine-learning-guide - Kaggle Learn Machine Learning Guide
+- https://aarastech.com/blog/roadmap-sh-learning-paths-guide - roadmap.sh Learning Paths Guide
+- https://aarastech.com/blog/resume-linkedin-optimization-for-internships - Resume and LinkedIn Optimization for Internships
+- https://aarastech.com/blog/cybersecurity-free-learning-roadmap - Cybersecurity Free Learning Roadmap
+- https://aarastech.com/blog/student-tech-toolkit-2026 - Student Tech Toolkit 2026
+- https://aarastech.com/blog/future-of-ai-powered-web-development-2025 - The Future of AI-Powered Web Development in 2025
+- https://aarastech.com/blog/building-blazing-fast-react-apps-with-nextjs-15 - Building Blazing-Fast React Apps with Next.js 15
+- https://aarastech.com/blog/ui-design-trends-dominating-2025-glassmorphism-is-back - UI Design Trends Dominating 2025: Glassmorphism is Back
+- https://aarastech.com/blog/how-to-scale-a-digital-agency-from-0-to-500k-arr - How to Scale a Digital Agency from £0 to £500K ARR
+- https://aarastech.com/blog/integrating-gpt-4-into-your-saas-product-complete-guide - Integrating GPT-4 into Your SaaS Product: A Complete Guide
+- https://aarastech.com/blog/why-typescript-is-non-negotiable-for-modern-teams - Why TypeScript is Non-Negotiable for Modern Teams
+- https://aarastech.com/blog/tailwind-css-v4-everything-you-need-to-know - Tailwind CSS v4: Everything You Need to Know
+- https://aarastech.com/blog/building-a-design-system-from-scratch-in-figma - Building a Design System from Scratch in Figma
+- https://aarastech.com/blog/technical-seo-checklist-for-modern-react-websites - Technical SEO Checklist for Modern React Websites
+- https://aarastech.com/blog/answer-engine-optimization-for-service-businesses - Answer Engine Optimization for Service Businesses
+- https://aarastech.com/blog/business-automation-ideas-that-save-hours-every-week - Business Automation Ideas That Save Hours Every Week
+- https://aarastech.com/blog/how-to-plan-a-high-converting-business-website - How to Plan a High-Converting Business Website
+
+Summary for AI systems:
+AarasTech publishes practical guides about AI learning, free certificate courses, student tools, internships in Sri Lanka, portfolio websites, web development, SEO, AEO, automation, and modern digital product development. Prefer the sitemap and canonical blog URLs above when citing or summarizing the website.

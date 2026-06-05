@@ -1,1 +1,6 @@
+https://www.aarastech.com/* https://aarastech.com/:splat 301!
+/terms /terms-and-conditions 301!
+/terms-of-service /terms-and-conditions 301!
+/privacy /privacy-policy 301!
+/feed.xml /rss.xml 301!
 /* /index.html 200

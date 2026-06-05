@@ -85,7 +85,9 @@ export const organizationSchema: JsonLdNode = {
     },
   ],
   "sameAs": [
-    "https://www.linkedin.com/company/aarastech",
+    "https://www.linkedin.com/company/aaras-tech/",
+    "https://www.instagram.com/aaras_tech/",
+    "https://web.facebook.com/aarasuk",
   ],
   "knowsAbout": [
     "AEO",
@@ -238,6 +240,9 @@ export function articleSchema(options: {
   author?: string;
   keywords?: string;
 }): JsonLdNode {
+  const datePublished = toIsoDate(options.datePublished);
+  const dateModified = toIsoDate(options.dateModified || options.datePublished);
+
   return {
     "@type": "BlogPosting",
     "@id": `${absoluteUrl(options.path)}#article`,
@@ -247,8 +252,8 @@ export function articleSchema(options: {
     "headline": options.title,
     "description": options.description,
     "image": options.image || DEFAULT_OG_IMAGE,
-    "datePublished": options.datePublished,
-    "dateModified": options.dateModified || options.datePublished,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
     "author": {
       "@type": "Person",
       "name": options.author || BRAND_NAME,
@@ -259,6 +264,13 @@ export function articleSchema(options: {
     "keywords": options.keywords,
     "inLanguage": "en",
   };
+}
+
+function toIsoDate(value?: string) {
+  if (!value) return undefined;
+  const time = Date.parse(value);
+  if (Number.isNaN(time)) return value;
+  return new Date(time).toISOString().slice(0, 10);
 }
 
 export function buildSchema(nodes: JsonLdNode[]) {

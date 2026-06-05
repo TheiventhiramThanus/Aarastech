@@ -8,13 +8,32 @@ import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import { AEOAnswerSection } from "../components/AEOAnswerSection";
 import { brandKeywords, breadcrumbSchema, buildSchema, faqSchema, pageSchema } from "../lib/seo";
+import { blogPosts as fallbackBlogPosts } from "../data/blogPosts";
 
 interface BlogPost {
-  id: string; title: string; slug: string; excerpt: string; content: string; author: string; date: string; category: string;
-  readTime: string; status: string; tag: string; color: string; image: string; featured?: boolean;
+  id: string; title: string; slug: string; excerpt: string; content?: unknown; contentText?: string; author: string; authorRole?: string; date: string; category: string;
+  readTime: string; status?: string; tag: string; color: string; image: string; featured?: boolean;
 }
 
-const categories = ["All", "AI & Tech", "Web Dev", "Design", "Business", "Tutorials"];
+const staticPublishedPosts: BlogPost[] = fallbackBlogPosts.map((post) => ({
+  ...post,
+  id: String(post.id),
+  status: "Published",
+}));
+
+function publishedPostsWithFallback(firebasePosts: BlogPost[]) {
+  const bySlug = new Map<string, BlogPost>();
+  staticPublishedPosts.forEach((post) => bySlug.set(post.slug, post));
+  firebasePosts
+    .filter((post) => !post.status || post.status === "Published")
+    .forEach((post) => bySlug.set(post.slug, post));
+
+  return Array.from(bySlug.values()).sort((a, b) => {
+    const aTime = Date.parse(a.date);
+    const bTime = Date.parse(b.date);
+    return (Number.isNaN(bTime) ? 0 : bTime) - (Number.isNaN(aTime) ? 0 : aTime);
+  });
+}
 
 const blogAeoAnswers = [
   {
@@ -62,10 +81,10 @@ export function BlogPage() {
         const q = query(collection(db, "blog_posts"), where("status", "==", "Published"));
         const snap = await getDocs(q);
         const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as BlogPost));
-        data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        setPosts(data);
+        setPosts(publishedPostsWithFallback(data));
       } catch (e) {
         console.error("Error fetching blog posts:", e);
+        setPosts(staticPublishedPosts);
       } finally {
         setLoading(false);
       }
@@ -74,6 +93,7 @@ export function BlogPage() {
   }, []);
 
   const featured = posts.find(p => p.featured) ?? posts[0];
+  const categories = ["All", ...Array.from(new Set(posts.map((post) => post.category)))];
   const filtered = activeCategory === "All"
     ? posts.filter(p => p.id !== featured?.id)
     : posts.filter(p => p.category === activeCategory && p.id !== featured?.id);

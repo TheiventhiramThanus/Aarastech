@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "generate:feeds": "node scripts/generate-public-files.mjs",
+    "sync:blog": "node scripts/sync-blog-posts.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
