@@ -4,7 +4,6 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../../lib/firebase";
-import { SEED_TESTIMONIALS } from "../data/seedTestimonials";
 
 interface Testimonial {
   id?: string; name: string; role: string; location: string;
@@ -16,29 +15,53 @@ export function TestimonialsSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [testimonials, setTestimonials] = useState<Testimonial[]>(SEED_TESTIMONIALS);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const q = query(collection(db, "testimonials"), orderBy("createdAt", "desc"));
-    const unsubscribe = onSnapshot(q, (snap) => {
-      if (!snap.empty) {
+    const unsubscribe = onSnapshot(
+      q,
+      (snap) => {
         setTestimonials(snap.docs.map(d => ({ id: d.id, ...d.data() } as Testimonial)));
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Error fetching testimonials:", error);
+        setTestimonials([]);
+        setLoading(false);
       }
-    });
+    );
     return () => unsubscribe();
   }, []);
 
   useEffect(() => {
+    if (testimonials.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
   }, [testimonials.length]);
 
-  const prev = () => setCurrentIndex((p) => (p - 1 + testimonials.length) % testimonials.length);
-  const next = () => setCurrentIndex((p) => (p + 1) % testimonials.length);
+  useEffect(() => {
+    if (currentIndex >= testimonials.length) {
+      setCurrentIndex(0);
+    }
+  }, [currentIndex, testimonials.length]);
 
-  const current = testimonials[currentIndex] || SEED_TESTIMONIALS[0];
+  const prev = () => {
+    if (testimonials.length === 0) return;
+    setCurrentIndex((p) => (p - 1 + testimonials.length) % testimonials.length);
+  };
+  const next = () => {
+    if (testimonials.length === 0) return;
+    setCurrentIndex((p) => (p + 1) % testimonials.length);
+  };
+
+  const current = testimonials[currentIndex];
+
+  if (!loading && testimonials.length === 0) return null;
+  if (!current) return null;
 
   return (
     <section className="relative bg-[#030303] py-32 overflow-hidden">

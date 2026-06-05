@@ -1422,7 +1422,7 @@ function SettingsSection() {
   const handleSave = () => { setSaved(true); setTimeout(() => setSaved(false), 2000); };
 
   const handleForceReset = async () => {
-    if (!window.confirm("This will DELETE all services, blog posts, and community resources in Firestore and re-seed fresh data. Continue?")) return;
+    if (!window.confirm("This will DELETE all services, blog posts, community resources, and testimonials in Firestore and re-seed fresh data. Continue?")) return;
     setResetting(true);
     try {
       // Clear all seed keys
@@ -1477,7 +1477,7 @@ function SettingsSection() {
             <span className="text-white font-semibold" style={{ fontFamily: "Space Grotesk" }}>Database Reset</span>
           </div>
           <p className="text-gray-500 text-sm mb-5 leading-relaxed">
-            If services or blog posts are showing wrong / old data, use this to wipe and re-seed fresh data into Firestore with the correct schema.
+            If services, blog posts, community resources, or testimonials are showing wrong / old data, use this to wipe and re-seed fresh data into Firestore with the correct schema.
           </p>
           <button
             onClick={handleForceReset}
@@ -1556,10 +1556,8 @@ export function AdminDashboard({ onClose }: AdminDashboardProps) {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [ads, setAds] = useState<Ad[]>([]);
 
-  // ── Seed + Subscribe ──
+  // ── Subscribe to Firebase data ──
   useEffect(() => {
-    seedAllIfNeeded().catch(console.error);
-
     const unsubs = [
       onSnapshot(query(collection(db, "projects"), orderBy("createdAt", "desc")), snap => {
         setProjects(snap.docs.map(d => ({ id: d.id, ...d.data() } as Project)));

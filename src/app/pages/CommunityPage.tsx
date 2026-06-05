@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import * as Icons from "lucide-react";
 import { ArrowRight, BadgeCheck, ShieldCheck, MessageCircle, ExternalLink, Download } from "lucide-react";
 import { SEO } from "../components/SEO";
-import { collection, query, getDocs, where } from "firebase/firestore";
+import { collection, query, onSnapshot, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import { breadcrumbSchema, buildSchema, pageSchema } from "../lib/seo";
 
@@ -11,6 +11,11 @@ interface CommunityResource {
   id: string; title: string; desc: string; icon: string; color: string; status: string; time: string;
   image?: string; link?: string;
   pdfUrl?: string; pdfName?: string;
+  createdAt?: { toMillis?: () => number } | null;
+}
+
+function getCreatedAtMillis(item: CommunityResource) {
+  return item.createdAt?.toMillis?.() ?? 0;
 }
 
 export function CommunityPage() {
@@ -18,25 +23,30 @@ export function CommunityPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchResources = async () => {
-      try {
-        const q = query(collection(db, "community_comments"), where("status", "in", ["Published", "Pinned"]));
-        const snap = await getDocs(q);
+    const q = query(collection(db, "community_comments"), where("status", "in", ["Published", "Pinned"]));
+    const unsubscribe = onSnapshot(
+      q,
+      (snap) => {
         const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as CommunityResource));
-        // Sort explicitly: Pinned first, then by title
+        // Sort explicitly: pinned first, then newest resources first.
         data.sort((a, b) => {
           if (a.status === "Pinned" && b.status !== "Pinned") return -1;
           if (b.status === "Pinned" && a.status !== "Pinned") return 1;
+          const timeDiff = getCreatedAtMillis(b) - getCreatedAtMillis(a);
+          if (timeDiff !== 0) return timeDiff;
           return a.title.localeCompare(b.title);
         });
         setCommunityItems(data);
-      } catch (e) {
-        console.error("Error fetching community resources:", e);
-      } finally {
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Error fetching community resources:", error);
+        setCommunityItems([]);
         setLoading(false);
       }
-    };
-    fetchResources();
+    );
+
+    return () => unsubscribe();
   }, []);
 
   const communitySchema = JSON.stringify({
@@ -114,6 +124,8 @@ export function CommunityPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {loading ? (
             <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 text-gray-500">Loading resources...</div>
+          ) : communityItems.length === 0 ? (
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 text-gray-500">No community resources found.</div>
           ) : communityItems.map((item, i) => {
             const Icon = (Icons[item.icon as keyof typeof Icons] || Icons.MessageCircle) as React.ElementType;
             const CardContent = (
