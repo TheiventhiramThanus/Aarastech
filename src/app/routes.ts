@@ -12,6 +12,7 @@ const CommunityPage = lazy(() => import("./pages/CommunityPage").then((module) =
 const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage").then((module) => ({ default: module.PrivacyPolicyPage })));
 const TermsConditionsPage = lazy(() => import("./pages/TermsConditionsPage").then((module) => ({ default: module.TermsConditionsPage })));
 const CookiePolicyPage = lazy(() => import("./pages/CookiePolicyPage").then((module) => ({ default: module.CookiePolicyPage })));
+const DisclaimerPage = lazy(() => import("./pages/DisclaimerPage").then((module) => ({ default: module.DisclaimerPage })));
 
 export const router = createBrowserRouter([
   {
@@ -31,8 +32,9 @@ export const router = createBrowserRouter([
       { path: "terms-and-conditions", Component: TermsConditionsPage },
       { path: "terms", loader: () => redirect("/terms-and-conditions") },
       { path: "cookie-policy", Component: CookiePolicyPage },
-      { path: "login", Component: () => null },
-      { path: "dashboard", Component: () => null },
+      { path: "disclaimer", Component: DisclaimerPage },
+      { path: "login", loader: () => redirect("/") },
+      { path: "dashboard", loader: () => redirect("/") },
       { path: "*", loader: () => redirect("/") },
     ],
   },

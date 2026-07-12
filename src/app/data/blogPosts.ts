@@ -723,6 +723,240 @@ const rawBlogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    id: 21,
+    slug: "how-to-choose-web-development-agency-2026",
+    title: "How to Choose a Web Development Agency in 2026",
+    excerpt:
+      "A practical guide for businesses evaluating web development agencies — what to look for, red flags to avoid, and how to ensure your project succeeds from day one.",
+    category: "Business",
+    readTime: "10 min read",
+    date: "10 Jul 2026",
+    color: "#10b981",
+    featured: false,
+    tag: "Strategy",
+    author: "Aaras Kumar",
+    authorRole: "Founder & Lead Engineer",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600",
+    content: [
+      {
+        body: "Choosing the right web development agency is one of the most consequential decisions a growing business makes. A great agency becomes a long-term growth partner; a poor one wastes months of budget and momentum. In 2026, with AI tools reshaping the industry and client expectations higher than ever, the evaluation criteria have shifted significantly from even two years ago. This guide walks you through what actually matters when selecting an agency and how to avoid the most common and costly mistakes.",
+      },
+      {
+        heading: "Define your project scope before you search",
+        body: "The single biggest cause of failed agency relationships is unclear scope. Before you contact anyone, write down what your website needs to accomplish. Is it a lead generation site, an e-commerce store, a SaaS dashboard, or a content platform? What pages do you need at launch? Do you need a CMS, a booking system, payment processing, or third-party integrations? How will success be measured — more leads, higher conversion rates, faster load times, or better search rankings? Agencies work best when clients arrive with a clear business objective rather than a vague idea. Even a one-page brief that outlines your goals, target audience, budget range, and timeline will dramatically improve the quality of proposals you receive.",
+      },
+      {
+        heading: "Evaluate portfolio quality, not just quantity",
+        body: "Every agency has a portfolio page, but most businesses evaluate them incorrectly. Do not just ask whether the sites look attractive — ask whether they perform well. Check the portfolio sites on mobile devices. Run them through Google PageSpeed Insights. Look at whether they have proper meta tags, structured data, and clean URLs. A beautiful website that loads slowly and ranks poorly is a liability, not an asset. Also pay attention to whether the agency has experience in your industry or with similar project types. An agency that has built five successful e-commerce stores will understand your challenges faster than one that has only built brochure sites. Ask for case studies, not just screenshots.",
+      },
+      {
+        heading: "Technical expertise matters more than ever",
+        body: "In 2026, a modern website involves far more than HTML and CSS. Your agency should be comfortable with modern JavaScript frameworks like React or Next.js, responsive design principles, accessibility standards, performance optimization, and deployment pipelines. They should understand SEO at a technical level — server-side rendering, canonical URLs, schema markup, and Core Web Vitals. If your project involves AI features, chatbots, automation, or data dashboards, ask specifically about their experience with these technologies. Do not accept vague answers like 'we can figure it out.' Ask for specific examples of similar features they have shipped, and how they handled edge cases and scaling.",
+      },
+      {
+        heading: "Communication and process are non-negotiable",
+        body: "The best technical team in the world will fail your project if communication breaks down. Before signing a contract, ask the agency to describe their development process. How do they handle requirements gathering? Do they use wireframes and prototypes before coding? How often will you receive progress updates? What project management tools do they use? A professional agency should have a clear, repeatable process that includes discovery, design, development, testing, launch, and post-launch support. Be cautious of agencies that skip the discovery phase and jump straight to design — this almost always leads to misaligned expectations and costly revisions later.",
+      },
+      {
+        heading: "Red flags to watch for",
+        body: "Avoid agencies that promise unrealistic timelines, offer suspiciously low prices without explaining trade-offs, or refuse to show you live examples of their work. Be wary of agencies that do not provide a written proposal or statement of work — verbal agreements create disputes. Watch out for agencies that outsource everything to undisclosed third parties, as this creates accountability gaps. If an agency cannot explain their technology choices in plain language, they may not fully understand them. Finally, avoid agencies that do not discuss post-launch maintenance, security updates, or hosting responsibilities — a website requires ongoing care, and your agency should plan for this from the beginning.",
+      },
+      {
+        heading: "Pricing models and what to expect",
+        body: "Web development pricing varies widely depending on scope, complexity, and agency location. Most agencies use one of three models: fixed-price projects, hourly billing, or retainer agreements. Fixed-price works well for clearly scoped projects with defined deliverables. Hourly billing suits ongoing work where requirements evolve. Retainers are ideal for long-term partnerships that include maintenance, updates, and strategic support. For a professional business website in 2026, expect to invest between three thousand and twenty-five thousand pounds depending on complexity. Be suspicious of quotes that are dramatically lower than competitors — the savings usually come from cutting corners on quality, testing, or post-launch support.",
+      },
+      {
+        heading: "How AarasTech approaches client projects",
+        body: "At AarasTech, every project begins with a detailed discovery conversation where we understand your business goals, audience, and technical requirements. We provide a written proposal with clear deliverables, timelines, and pricing before any work begins. Our development process includes wireframing, design review, iterative development sprints, thorough testing across devices, and a supported launch. We use modern frameworks like React and Next.js, implement SEO and accessibility best practices by default, and provide post-launch maintenance plans. We believe the best agency relationships are built on transparency, clear communication, and a genuine commitment to your business outcomes.",
+      },
+    ],
+  },
+  {
+    id: 22,
+    slug: "react-native-vs-flutter-mobile-app-development-2026",
+    title: "Mobile App Development: React Native vs Flutter in 2026",
+    excerpt:
+      "An honest, technical comparison of React Native and Flutter for cross-platform mobile development — performance, ecosystem, developer experience, and when to choose each.",
+    category: "Web Dev",
+    readTime: "11 min read",
+    date: "8 Jul 2026",
+    color: "#7c3aed",
+    featured: false,
+    tag: "Mobile Dev",
+    author: "Priya Shah",
+    authorRole: "Senior React Engineer",
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600",
+    content: [
+      {
+        body: "The cross-platform mobile development landscape in 2026 is dominated by two frameworks: React Native and Flutter. Both have matured significantly, both have strong backing from major technology companies, and both can produce high-quality production applications. The right choice depends not on which framework is objectively better, but on which one aligns better with your team, your project requirements, and your long-term technology strategy. This guide provides a detailed, practical comparison based on real project experience.",
+      },
+      {
+        heading: "Architecture and rendering approach",
+        body: "React Native uses a bridge architecture that communicates between JavaScript and native platform components. Your UI is rendered using actual native widgets, which means your app looks and feels native by default. Flutter takes a fundamentally different approach — it uses the Skia rendering engine to draw every pixel directly on a canvas, bypassing native UI components entirely. This gives Flutter complete control over rendering, which enables pixel-perfect consistency across platforms but means the app does not automatically inherit platform-specific design conventions. In practice, React Native apps tend to feel more platform-native out of the box, while Flutter apps feel more consistent across iOS and Android but may require additional effort to match platform expectations.",
+      },
+      {
+        heading: "Developer experience and language",
+        body: "React Native uses JavaScript and TypeScript, which are the most widely known programming languages in web development. If your team already builds web applications with React, the transition to React Native is relatively smooth — you already understand components, hooks, state management, and the ecosystem. Flutter uses Dart, a language developed by Google that is well-designed but far less commonly known. Learning Dart is not difficult for experienced developers, but it does create a learning curve and limits your hiring pool. For teams that want to share code between web and mobile applications, React Native with a shared TypeScript codebase offers a significant advantage.",
+      },
+      {
+        heading: "Performance comparison",
+        body: "Both frameworks deliver excellent performance for the vast majority of mobile applications. Flutter's compiled-to-native approach can offer slightly better performance for graphics-intensive applications, complex animations, and custom rendering scenarios. React Native has improved dramatically with the New Architecture, which introduces a more efficient communication bridge and allows for synchronous native module calls. For typical business applications — forms, lists, navigation, maps, camera access, and API interactions — both frameworks perform well enough that performance alone should not be the deciding factor. The real performance bottleneck in most mobile apps is poor architecture and inefficient data handling, not the framework itself.",
+      },
+      {
+        heading: "Ecosystem and third-party libraries",
+        body: "React Native benefits from the enormous JavaScript and npm ecosystem. There are mature, well-maintained libraries for nearly every common requirement: navigation, state management, forms, maps, payments, push notifications, analytics, and more. The community is large and active, which means problems are usually solvable through documentation or community support. Flutter's ecosystem has grown rapidly and covers most common use cases, but it is still smaller than React Native's. For niche requirements or complex native integrations, you may find fewer options in the Flutter ecosystem and may need to write custom platform channel code more frequently.",
+      },
+      {
+        heading: "When to choose React Native",
+        body: "Choose React Native when your team has strong JavaScript or TypeScript expertise, when you want to share code between web and mobile applications, when your app needs to feel native on each platform, when you need access to a large ecosystem of third-party libraries, or when hiring React developers is easier in your market. React Native is particularly strong for business applications, content platforms, e-commerce apps, and products that prioritize platform-native user experience. At AarasTech, we use React Native for most client mobile projects because it aligns with our React web expertise and enables efficient cross-platform development.",
+      },
+      {
+        heading: "When to choose Flutter",
+        body: "Choose Flutter when visual consistency across platforms is more important than platform-native feel, when your app requires complex custom animations or graphics, when you are building a new team without existing JavaScript expertise, or when your product design requires pixel-perfect control over every visual element. Flutter excels at applications with custom UI designs, branded experiences that should look identical on every device, and projects where the design team drives the development process. Flutter is also a strong choice when you need to target web, desktop, and mobile from a single codebase.",
+      },
+    ],
+  },
+  {
+    id: 23,
+    slug: "complete-seo-guide-small-businesses-sri-lanka",
+    title: "Complete Guide to SEO for Small Businesses in Sri Lanka",
+    excerpt:
+      "A step-by-step SEO guide specifically for Sri Lankan small businesses — local search, Google Business Profile, on-page optimization, and content strategy that works.",
+    category: "SEO & AEO",
+    readTime: "12 min read",
+    date: "6 Jul 2026",
+    color: "#f59e0b",
+    featured: false,
+    tag: "SEO",
+    author: "Aaras Kumar",
+    authorRole: "Founder & Lead Engineer",
+    image:
+      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600",
+    content: [
+      {
+        body: "Search engine optimization is one of the most cost-effective ways for small businesses in Sri Lanka to attract customers, build credibility, and compete with larger companies. Unlike paid advertising, which stops generating results the moment you stop paying, SEO builds long-term visibility that compounds over time. This guide is written specifically for Sri Lankan business owners, freelancers, and startup founders who want to understand how SEO works and take practical steps to improve their online presence without hiring an expensive agency for basic work.",
+      },
+      {
+        heading: "Start with Google Business Profile",
+        body: "For any business that serves local customers — whether you are a restaurant in Colombo, a software company in Jaffna, a tuition centre in Kandy, or a photography studio in Galle — Google Business Profile is the single most important SEO tool you should set up first. It is completely free and directly affects whether your business appears in Google Maps results and the local pack that shows above regular search results. Claim your business, verify your address, add accurate opening hours, upload high-quality photos of your premises and work, write a compelling business description, choose the correct categories, and respond to every customer review. Businesses with complete, active Google Business Profiles receive significantly more calls, website visits, and direction requests than those with incomplete profiles.",
+      },
+      {
+        heading: "On-page SEO fundamentals",
+        body: "Every page on your website should have a unique, descriptive title tag that includes your main keyword and location. For example, 'Best Wedding Photography in Jaffna' is far more effective than just 'Photography.' Write a compelling meta description for each page that encourages clicks from search results. Use a single H1 heading per page that clearly describes the page content. Structure your content with H2 and H3 subheadings that help both readers and search engines understand the page structure. Include your business name, service area, and relevant keywords naturally throughout the content — never stuff keywords unnaturally. Make sure every image has a descriptive alt text that helps visually impaired users and gives search engines context about the image content.",
+      },
+      {
+        heading: "Create content that answers real questions",
+        body: "The most effective content strategy for a small business is to answer the questions your potential customers are already asking. Think about what people search before they hire someone like you. A web development company might write guides about how much a website costs in Sri Lanka, how to choose a web developer, or what features a business website needs. A tuition centre might write about exam preparation tips, subject-specific study guides, or how to choose the right tuition class. Use Google's autocomplete suggestions, the 'People also ask' section, and your own customer conversations to identify these questions. Each piece of content should thoroughly answer one specific question and link to your services page where relevant.",
+      },
+      {
+        heading: "Technical SEO for Sri Lankan websites",
+        body: "Many Sri Lankan websites are built on platforms with poor technical foundations. Make sure your website loads quickly — test it with Google PageSpeed Insights and aim for a performance score above 70 on mobile. Use HTTPS for security and trust signals. Make your website fully responsive on mobile devices, since the majority of Sri Lankan internet users browse on smartphones. Create a clean URL structure that humans can read and understand. Submit an XML sitemap to Google Search Console and fix any crawl errors that appear. If you serve customers in specific cities or regions, create dedicated landing pages for each location with unique, relevant content rather than duplicating the same page with different city names.",
+      },
+      {
+        heading: "Building trust and authority",
+        body: "Google ranks trustworthy, authoritative websites higher. For a small business, trust signals include a professional website design, a detailed About Us page with real team photos and backgrounds, a physical address and phone number displayed clearly, customer testimonials and case studies, and active social media profiles linked from your website. Get listed on relevant Sri Lankan business directories such as topjobs, XpressJobs, and industry-specific platforms. Encourage satisfied customers to leave Google reviews, and respond professionally to every review. Publish content consistently — even one well-written article per week builds authority over time far more effectively than publishing twenty articles at once and then going silent.",
+      },
+      {
+        heading: "Common SEO mistakes to avoid",
+        body: "Do not buy backlinks from random sellers — Google penalizes manipulative link building. Do not copy content from other websites — duplicate content hurts your rankings and credibility. Do not use invisible text, keyword stuffing, or cloaking techniques that violate Google's guidelines. Do not ignore mobile optimization — more than seventy percent of searches in Sri Lanka happen on mobile devices. Do not neglect page speed — slow websites lose visitors before they even see your content. Do not create dozens of thin, low-quality pages hoping to rank for every possible keyword. Instead, create fewer pages with deeper, more helpful content that genuinely serves your visitors.",
+      },
+    ],
+  },
+  {
+    id: 24,
+    slug: "why-every-business-needs-custom-website-2026",
+    title: "Why Every Business Needs a Custom Website in 2026",
+    excerpt:
+      "Beyond templates and page builders — why custom-built websites deliver better performance, conversions, SEO, and long-term business value for growing companies.",
+    category: "Business",
+    readTime: "9 min read",
+    date: "4 Jul 2026",
+    color: "#ec4899",
+    featured: false,
+    tag: "Business",
+    author: "Maya Iyer",
+    authorRole: "Design Director",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600",
+    content: [
+      {
+        body: "In 2026, having a website is not a competitive advantage — it is the minimum requirement for being taken seriously as a business. The real question is whether your website is actively working for your business or simply existing as a digital brochure that visitors glance at and leave. Template websites and drag-and-drop page builders have made it easy for anyone to put something online, but easy does not mean effective. A custom-built website, designed around your specific business goals and audience, delivers measurably better results in performance, search visibility, user experience, and conversion rates.",
+      },
+      {
+        heading: "Performance that affects revenue",
+        body: "Website speed directly impacts business outcomes. Research consistently shows that every additional second of load time reduces conversions by seven to ten percent. Template-based websites carry significant performance overhead — unused CSS frameworks, bloated JavaScript libraries, generic animations, and excessive plugin code that your specific site does not need. A custom website includes only the code required for your features, resulting in dramatically faster load times. For businesses in Sri Lanka and other emerging markets where mobile internet speeds vary widely, this performance difference is even more critical. A custom site that loads in under two seconds on a mid-range smartphone will capture visitors that a slow template site would lose.",
+      },
+      {
+        heading: "SEO advantages of custom development",
+        body: "Search engines reward websites that are fast, well-structured, accessible, and technically sound. Custom development gives you complete control over the technical foundations that affect search rankings: server-side rendering for instant content visibility to crawlers, clean semantic HTML that search engines can parse efficiently, proper heading hierarchies, schema markup for rich search results, optimized images with appropriate formats and lazy loading, and clean URL structures. Template sites often generate bloated, non-semantic HTML with deeply nested div structures that make it harder for search engines to understand your content. The SEO advantage of a well-built custom website compounds over time, delivering organic traffic that would cost thousands in paid advertising.",
+      },
+      {
+        heading: "Brand differentiation in a crowded market",
+        body: "When every competitor uses the same handful of popular templates, your website looks like everyone else's. Visitors develop template fatigue — they can instinctively tell when a site is built from a template, and it subtly signals that the business has not invested in its own identity. A custom website communicates professionalism, attention to detail, and confidence. It allows your brand personality to come through in every interaction — from the way the navigation feels to the micro-animations that guide attention to the specific way your services are presented. For businesses competing in premium markets, the visual and experiential quality of your website is often the first trust signal potential clients evaluate.",
+      },
+      {
+        heading: "Conversion optimization built in",
+        body: "Template websites force your content into pre-defined layouts that may not match your customer journey. A custom website is designed around how your specific customers think, browse, and make decisions. The call-to-action placement, form design, service presentation, testimonial positioning, and navigation flow are all engineered to guide visitors toward the action you want them to take — whether that is booking a consultation, requesting a quote, making a purchase, or signing up for a service. This intentional design approach consistently produces higher conversion rates than generic template layouts that were designed for no specific business in particular.",
+      },
+      {
+        heading: "Scalability and long-term value",
+        body: "Template websites often become limiting as businesses grow. Adding custom features, integrations, or workflow automation to a template site frequently requires workarounds that create technical debt and maintenance headaches. A custom website is built on a clean, modular architecture that can grow with your business. Need to add a client portal? A booking system? An AI chatbot? A product configurator? These features integrate cleanly into a custom codebase. Over a three-to-five year horizon, the total cost of ownership for a custom website is often lower than a template site that requires constant plugin updates, compatibility fixes, and workaround solutions.",
+      },
+      {
+        heading: "When a template might be enough",
+        body: "Not every business needs a fully custom website from day one. If you are validating a new business idea, testing a market, or operating with a very limited budget, a well-chosen template can be a reasonable starting point. The key is to treat it as temporary. Once your business model is validated and revenue is growing, investing in a custom website becomes one of the highest-return investments you can make. At AarasTech, we help businesses make this transition smoothly — understanding what you have built so far, what is working, what needs improvement, and designing a custom solution that builds on your existing strengths while eliminating the limitations that are holding you back.",
+      },
+    ],
+  },
+  {
+    id: 25,
+    slug: "understanding-ui-ux-design-beginners-complete-guide",
+    title: "Understanding UI/UX Design: A Beginner's Complete Guide",
+    excerpt:
+      "Everything beginners need to know about UI and UX design — the difference between them, core principles, the design process, essential tools, and how to start building skills.",
+    category: "Design",
+    readTime: "11 min read",
+    date: "2 Jul 2026",
+    color: "#06b6d4",
+    featured: false,
+    tag: "Design",
+    author: "Maya Iyer",
+    authorRole: "Design Director",
+    image:
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600",
+    content: [
+      {
+        body: "UI and UX design are two of the most in-demand skills in the technology industry, yet many beginners struggle to understand what these terms actually mean, how they differ, and where to start learning. This guide provides a clear, comprehensive introduction to both disciplines, explains the design process from research to delivery, covers the tools professionals use, and offers a practical roadmap for building real skills. Whether you are a student considering a career in design, a developer who wants to create better interfaces, or a business owner who wants to understand what good design looks like, this guide will give you a solid foundation.",
+      },
+      {
+        heading: "UX design vs UI design: what is the difference?",
+        body: "User Experience design and User Interface design are related but distinct disciplines. UX design focuses on the overall experience a person has when interacting with a product — how easy it is to accomplish goals, how intuitive the navigation feels, whether the information architecture makes sense, and how satisfying the interaction is from start to finish. UI design focuses specifically on the visual and interactive elements of the interface — the layout, typography, color palette, button styles, icons, spacing, and visual hierarchy. Think of UX as the blueprint of a building and UI as the interior design. A beautiful interface with poor usability frustrates users, while a well-organized experience with ugly visuals fails to build trust and engagement. Great products excel at both.",
+      },
+      {
+        heading: "Core UX design principles",
+        body: "Good UX design is built on several fundamental principles that apply regardless of the product type. Clarity means users should always understand where they are, what they can do, and what will happen when they take an action. Consistency means similar elements should behave in similar ways throughout the product. Feedback means the interface should respond to every user action so people know their input was received. Efficiency means common tasks should require minimal effort. Error prevention means the design should help users avoid mistakes and recover easily when errors occur. Accessibility means the product should be usable by people with diverse abilities, including those who use screen readers, keyboard navigation, or have visual impairments.",
+      },
+      {
+        heading: "The UX design process explained",
+        body: "Professional UX design follows a structured process that typically includes five phases. Research involves understanding who your users are, what problems they face, and what goals they are trying to achieve — through interviews, surveys, analytics, and competitive analysis. Definition means synthesizing your research into clear problem statements, user personas, and user journey maps. Ideation involves generating potential solutions through sketching, brainstorming, and exploring different approaches. Prototyping means creating interactive mockups that simulate the experience so you can test ideas before investing in development. Testing means putting your prototype in front of real users, observing how they interact with it, identifying pain points, and iterating on the design based on evidence rather than assumptions.",
+      },
+      {
+        heading: "Essential UI design fundamentals",
+        body: "UI design requires understanding several visual design fundamentals. Typography involves choosing readable, appropriate typefaces and creating a consistent type scale for headings, body text, labels, and captions. Color theory involves selecting a palette that communicates your brand personality, provides sufficient contrast for readability, and uses accent colors strategically to guide attention. Layout and spacing involve creating a consistent grid system and spacing scale that organizes content in a scannable, balanced way. Visual hierarchy involves using size, weight, color, and position to indicate which elements are most important. Responsive design involves ensuring the interface works beautifully on screens of all sizes, from mobile phones to desktop monitors.",
+      },
+      {
+        heading: "Tools every designer should learn",
+        body: "The design tool landscape in 2026 is dominated by a few key platforms. Figma is the industry standard for interface design, prototyping, design systems, and team collaboration — most employers expect Figma proficiency. Adobe XD remains useful but is less commonly required. Sketch is popular among some macOS users but has lost market share to Figma. For user research and testing, tools like Maze, UserTesting, and Hotjar help designers gather evidence about user behavior. For handoff to developers, Figma's inspect mode and code generation features have become the standard workflow. Start with Figma — it is free for students and individuals, runs in the browser, and covers the vast majority of UI and UX design needs.",
+      },
+      {
+        heading: "How to start building real skills",
+        body: "The most effective way to learn UI and UX design is through practice. Start by redesigning existing apps and websites — pick a product you use daily, identify something that frustrates you, and design a better solution. Document your process: what research did you do, what problems did you identify, what alternatives did you consider, and why did you choose your final approach. This creates portfolio-ready case studies that demonstrate your thinking, not just your visual skills. Take on small real-world projects for friends, family, local businesses, or open-source projects. Join design communities on Dribbble, Behance, and LinkedIn where you can share work and receive feedback. At AarasTech, our design team reviews every project through the lens of both UX principles and visual excellence, ensuring our clients receive interfaces that are not only beautiful but genuinely effective.",
+      },
+    ],
+  },
 ];
 
 const relatedImages: Record<string, string> = {
@@ -857,7 +1091,7 @@ function expandPost(post: BlogPost): BlogPost {
   };
 
   for (const block of expansionBlocks(expanded)) {
-    if (countWords(expanded.content) >= 650) break;
+    if (countWords(expanded.content) >= 850) break;
     expanded.content.push(block);
   }
 
